@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Heart, Activity, Eye, EyeOff, ArrowRight } from 'lucide-react';
+import { Heart, Activity, Eye, EyeOff } from 'lucide-react';
 import { signInWithEmail, signInWithGoogle } from '../firebase';
 import { useAuthStore } from '../store';
 import toast from 'react-hot-toast';
