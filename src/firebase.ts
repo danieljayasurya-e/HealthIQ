@@ -1,14 +1,14 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth, GoogleAuthProvider, signInWithPopup, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } from 'firebase/auth';
 
-// Firebase configuration - users should replace with their own config
+// Firebase configuration - loaded from environment variables
 const firebaseConfig = {
-  apiKey: "AIzaSyBDL82lm8hVs2AYfWYeFG6dSuA1YjKRItg",
-  authDomain: "healthiq-cef80.firebaseapp.com",
-  projectId: "healthiq-cef80",
-  storageBucket: "healthiq-cef80.firebasestorage.app",
-  messagingSenderId: "665958409758",
-  appId: "1:665958409758:web:deeb40a75caeb5cf53300f"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
 
 const app = initializeApp(firebaseConfig);

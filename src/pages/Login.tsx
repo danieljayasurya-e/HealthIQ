@@ -17,27 +17,6 @@ const Login: React.FC = () => {
     if (user) navigate('/dashboard');
   }, [user, navigate]);
 
-  const handleDemoLogin = async () => {
-    setLoading(true);
-    try {
-      await signInWithEmail('demo@healthiq.com', 'Demo@1234');
-      navigate('/dashboard');
-    } catch {
-      // Firebase not configured — use mock login for demo
-      useAuthStore.getState().setUser({
-        uid: 'demo-user',
-        email: 'demo@healthiq.com',
-        displayName: 'Dr. Demo Admin',
-        photoURL: null,
-      });
-      useAuthStore.getState().setLoading(false);
-      navigate('/dashboard');
-      toast.success('Welcome to HealthIQ! (Demo Mode)');
-    } finally {
-      setLoading(false);
-    }
-  };
-
   const handleEmailLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
@@ -46,7 +25,6 @@ const Login: React.FC = () => {
       navigate('/dashboard');
       toast.success('Welcome back!');
     } catch {
-      // Fallback demo mode if Firebase not configured
       useAuthStore.getState().setUser({
         uid: 'mock-user',
         email,
@@ -75,7 +53,6 @@ const Login: React.FC = () => {
 
   return (
     <div className="login-page">
-      {/* Animated background */}
       <div className="login-bg">
         <div className="login-bg__orb login-bg__orb--1" />
         <div className="login-bg__orb login-bg__orb--2" />
@@ -83,7 +60,6 @@ const Login: React.FC = () => {
         <div className="login-bg__grid" />
       </div>
 
-      {/* Left panel */}
       <div className="login-left">
         <div className="login-left__content">
           <div className="login-brand">
@@ -120,23 +96,12 @@ const Login: React.FC = () => {
         </div>
       </div>
 
-      {/* Right panel / form */}
       <div className="login-right">
         <div className="login-card">
           <div className="login-card__header">
             <h2>Sign In</h2>
             <p>Access your healthcare dashboard</p>
           </div>
-
-          {/* Demo banner */}
-          <div className="login-demo-banner">
-            <span>🚀 Demo Mode</span>
-            <button onClick={handleDemoLogin} disabled={loading} className="login-demo-btn">
-              Quick Access <ArrowRight size={14} />
-            </button>
-          </div>
-
-          <div className="login-divider"><span>or sign in manually</span></div>
 
           <form onSubmit={handleEmailLogin} className="login-form">
             <div className="login-field">
@@ -184,7 +149,7 @@ const Login: React.FC = () => {
           </button>
 
           <p className="login-card__note">
-            🔒 HIPAA-compliant platform. All data encrypted at rest and in transit.
+            HIPAA-compliant platform. All data encrypted at rest and in transit.
           </p>
         </div>
       </div>
