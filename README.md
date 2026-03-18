@@ -1,6 +1,6 @@
 # HealthIQ — B2B Healthcare Operations Platform
 
-A production-grade B2B healthcare UI built with React + TypeScript for the RAGA.AI Frontend Developer Assignment.
+A production-grade B2B healthcare UI built with React + TypeScript 
 
 ![HealthIQ](https://img.shields.io/badge/React-18-61DAFB?logo=react) ![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript) ![Vite](https://img.shields.io/badge/Vite-6-646CFF?logo=vite) ![Firebase](https://img.shields.io/badge/Firebase-Auth-FFCA28?logo=firebase)
 
@@ -32,25 +32,6 @@ npm run dev
 | Lucide React | Icon system |
 | React Hot Toast | Toast notifications |
 | Date-fns | Date formatting utilities |
-
----
-
-## ✅ Assignment Requirements
-
-- [x] **React + TypeScript** — Strict TS throughout, verbatimModuleSyntax compliant
-- [x] **Firebase Authentication** — Email/Password + Google OAuth + graceful demo fallback
-- [x] **Service Worker** — Cache-first strategy, push notification listener, permission prompt
-- [x] **Login Page** — Animated split-screen, quick demo access, HIPAA compliance note
-- [x] **Home / Dashboard** — Live KPI cards, area chart, ward occupancy, recent patients
-- [x] **Analytics Page** — Revenue, admissions/discharges, conditions, gender, insurance
-- [x] **Patient Details Page:**
-  - [x] Grid View (card-based with vitals chips)
-  - [x] List View (table with all fields)
-  - [x] View toggle button
-  - [x] Real-time search by name / ID / condition / doctor
-  - [x] Filter by status (Stable, Critical, Recovering, Discharged)
-  - [x] Filter by ward (Cardiology, Neurology, etc.)
-  - [x] Click-through detail modal with full patient info
 
 ---
 
@@ -98,12 +79,12 @@ To enable real authentication:
 
 ```typescript
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT.firebaseapp.com",
-  projectId: "YOUR_PROJECT",
-  storageBucket: "YOUR_PROJECT.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyBDL82lm8hVs2AYfWYeFG6dSuA1YjKRItg",
+  authDomain: "healthiq-cef80.firebaseapp.com",
+  projectId: "healthiq-cef80",
+  storageBucket: "healthiq-cef80.firebasestorage.app",
+  messagingSenderId: "665958409758",
+  appId: "1:665958409758:web:deeb40a75caeb5cf53300f"
 };
 ```
 
@@ -181,5 +162,3 @@ onAuthStateChanged(auth, (firebaseUser) => {
 | Patients | `/patients` | Toolbar, filter panel, Grid/List toggle, 8 patients, detail modal |
 
 ---
-
-*Built for the RAGA.AI Frontend Developer (2–3 Years) Assignment.*
