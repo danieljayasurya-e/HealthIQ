@@ -6,8 +6,8 @@ import { useAuthStore } from '../store';
 import toast from 'react-hot-toast';
 
 const Login: React.FC = () => {
-  const [email, setEmail] = useState('demo@healthiq.com');
-  const [password, setPassword] = useState('Demo@1234');
+  const [email, setEmail] = useState('test@healthiq.com');
+  const [password, setPassword] = useState('Test@1234');
   const [showPass, setShowPass] = useState(false);
   const [loading, setLoading] = useState(false);
   const { user } = useAuthStore();
